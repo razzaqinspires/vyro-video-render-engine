@@ -47,3 +47,6 @@ vyro-render inspect output/vyro-test.mp4
 ## Quality gates
 
 Rendering fails on missing required assets, missing FFmpeg, invalid dimensions, or incomplete output. Human review remains required for factual accuracy, legibility, pacing, safe margins, rights, and platform disclosure.
+
+## 1.1.0 — Prime API
+Optional FastAPI service exposes protected asset intake, render, and MP4 download endpoints. Install `pip install -e '.[api]'`, set `VYRO_SERVICE_API_KEY`, `VYRO_RENDER_ASSETS_DIR`, and `VYRO_RENDER_OUTPUT_DIR`, then run `uvicorn vyro_video_render_engine.api:app --host 0.0.0.0 --port 8000`. FFmpeg and ffprobe remain system dependencies. A final render is rejected unless the submitted package explicitly sets `review_approved=true`. Render duration is bounded to the sum of declared scene durations and checked after FFmpeg output.

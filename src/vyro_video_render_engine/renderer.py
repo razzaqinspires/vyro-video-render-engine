@@ -110,7 +110,8 @@ def render(content_json: Path, output: Path, workdir: Path, assets_dir: Path|Non
         lines.extend([f"file '{frame.name}'",f"duration {scene.duration_seconds:.3f}"])
     lines.append(f"file '{frame_paths[-1].name}'")
     concat.write_text("\n".join(lines)+"\n",encoding="utf-8")
-    command=["ffmpeg","-hide_banner","-y","-safe","0","-f","concat","-i",str(concat),"-vf","fps=30,scale=1080:1920,format=yuv420p","-c:v","libx264","-preset","medium","-crf","20","-movflags","+faststart"]
+    scene_total=sum(float(scene.duration_seconds) for scene in package.scenes)
+    command=["ffmpeg","-hide_banner","-y","-safe","0","-f","concat","-i",str(concat),"-t",f"{scene_total:.3f}","-vf","fps=30,scale=1080:1920,format=yuv420p","-c:v","libx264","-preset","medium","-crf","20","-movflags","+faststart"]
     if voiceover:
         command += ["-i",str(voiceover),"-map","0:v:0","-map","1:a:0","-c:a","aac","-b:a","192k","-af","apad","-shortest"]
     else:
@@ -118,6 +119,8 @@ def render(content_json: Path, output: Path, workdir: Path, assets_dir: Path|Non
     command += [str(output)]
     _run(command)
     metadata=inspect_video(output)
+    if abs(float(metadata["duration_seconds"])-scene_total) > 0.35:
+        raise RuntimeError(f"Rendered duration mismatch: expected {scene_total:.3f}s, got {metadata['duration_seconds']:.3f}s")
     manifest={"content_id":package.content_id,"output":str(output.resolve()),"sha256":sha256(output),"metadata":metadata,"frame_count":len(frame_paths),"human_review_required":True,"caption":package.caption}
     output.with_suffix(".manifest.json").write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding="utf-8")
     return manifest
