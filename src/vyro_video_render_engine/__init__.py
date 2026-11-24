@@ -1,2 +1,3 @@
-"""VYRO MEDIA Video Render Engine — reviewed MP4 production component."""
-__version__ = "1.2.0"
+"""VYRO Video Render Engine."""
+
+__version__ = "1.3.0"

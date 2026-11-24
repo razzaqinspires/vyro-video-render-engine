@@ -1,29 +1,14 @@
 {
   "content_id": "vyro-render-demo-001",
   "title": "Konten edukasi VYRO",
-  "duration_seconds": 20,
+  "duration_seconds": 16,
   "selected_hook": "Produk bagus belum tentu terlihat menarik.",
   "narration": "Tampilkan produk lebih awal, fokus pada satu manfaat yang benar, dan gunakan ajakan yang jelas.",
   "scenes": [
-    {
-      "scene_number": 1,
-      "duration_seconds": 5,
-      "visual_direction": "Opening card",
-      "on_screen_text": "Produk bagus belum tentu terlihat menarik."
-    },
-    {
-      "scene_number": 2,
-      "duration_seconds": 7,
-      "visual_direction": "Close up visual produk",
-      "on_screen_text": "Tampilkan produk sejak awal."
-    },
-    {
-      "scene_number": 3,
-      "duration_seconds": 8,
-      "visual_direction": "Closing creator shot",
-      "on_screen_text": "Satu manfaat. Satu ajakan. @vyromedia.id"
-    }
+    {"scene_number": 1, "duration_seconds": 8, "visual_direction": "Opening card", "on_screen_text": "Produk bagus belum tentu terlihat menarik."},
+    {"scene_number": 2, "duration_seconds": 8, "visual_direction": "Closing card", "on_screen_text": "Satu manfaat. Satu ajakan. @vyromedia.id"}
   ],
-  "caption": "Contoh render. Ganti aset contoh dengan footage sendiri.",
-  "human_review_required": true
+  "caption": "Contoh render VYRO MEDIA.",
+  "human_review_required": true,
+  "review_approved": false
 }

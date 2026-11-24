@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "title": "VYRO Product Showcase",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration_seconds": 12,
+  "background_color": "#050708",
+  "tracks": [
+    {"track_id": "V1", "name": "Main Footage", "kind": "video", "order": 0},
+    {"track_id": "T1", "name": "Titles", "kind": "overlay", "order": 10},
+    {"track_id": "A1", "name": "Music / Narration", "kind": "audio", "order": 20}
+  ],
+  "clips": [
+    {"clip_id": "opening-shot", "track_id": "V1", "kind": "image", "start_seconds": 0, "duration_seconds": 5, "asset_ref": "REPLACE_WITH_UPLOADED_IMAGE_REF", "fit": "cover", "fade_in_seconds": 0.4},
+    {"clip_id": "closing-shot", "track_id": "V1", "kind": "image", "start_seconds": 5, "duration_seconds": 7, "asset_ref": "REPLACE_WITH_UPLOADED_IMAGE_REF_2", "fit": "cover"},
+    {"clip_id": "title-main", "track_id": "T1", "kind": "text", "start_seconds": 1, "duration_seconds": 4, "text": "MAKE EVERY FRAME COUNT", "font_size": 74, "font_color": "#FAFCFA", "background_color": "#111611", "x": 0.5, "y": 0.45},
+    {"clip_id": "title-cta", "track_id": "T1", "kind": "text", "start_seconds": 8, "duration_seconds": 3, "text": "VYRO MEDIA / CREATIVE STUDIO", "font_size": 48, "font_color": "#B8FF00", "x": 0.5, "y": 0.78}
+  ]
+}

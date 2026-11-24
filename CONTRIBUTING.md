@@ -2,9 +2,9 @@
 
 1. Open an issue describing the change and its operational impact.
 2. Create a focused branch from `main`.
-3. Add or update tests for behavior changes.
-4. Run `ruff check .`, `ruff format --check .`, and `pytest`.
-5. Update README/docs when commands, configuration, contracts, or behavior change.
-6. Submit a pull request with a concise rationale, compatibility notes, and test evidence.
+3. Add or update tests for contract and behavior changes.
+4. Run `ruff check .`, `ruff format --check .`, `pytest`, and `python -m compileall -q src tests`.
+5. Update API, schema and migration documentation when behavior changes.
+6. Submit a pull request with rationale, compatibility notes and test evidence.
 
-Avoid committing rendered media, datasets, credentials, generated caches, or user information.
+Avoid committing rendered media, private datasets, credentials, generated caches, user data or copyrighted source assets without permission.

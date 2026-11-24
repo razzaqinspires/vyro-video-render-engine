@@ -1,0 +1,13 @@
+pydantic<3,>=2.7
+Pillow<12,>=10.4
+typer<1,>=0.12
+rich<15,>=13.7
+
+[api]
+fastapi<1,>=0.115
+uvicorn[standard]<1,>=0.30
+
+[dev]
+pytest<9,>=8
+ruff<1,>=0.5
+mypy<2,>=1.10

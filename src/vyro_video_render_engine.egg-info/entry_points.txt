@@ -1,0 +1,2 @@
+[console_scripts]
+vyro-render = vyro_video_render_engine.cli:app
